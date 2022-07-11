@@ -22,17 +22,9 @@ contract WavePortal {
         console.log("Hello, I am a contract and I am smart");
     }
 
-    function wave(string memory _message) public {
+    function wave() public {
         totalWaves += 1;
-        console.log("%s has waved w/ message %s", msg.sender, _message);
-
-        waves.push(Wave(msg.sender, _message, block.timestamp));
-
-        emit NewWave(msg.sender, block.timestamp, _message);
-    }
-
-    function getAllWaves() public view returns (Wave[] memory) {
-        return waves;
+        console.log("%s has waved!", msg.sender);
     }
 
     function getTotalWaves() public view returns (uint256) {
