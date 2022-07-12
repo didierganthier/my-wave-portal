@@ -33,8 +33,6 @@ contract WavePortal {
             "Wait 15mn"
         );
 
-        lastWavedAt[msg.sender] = block.timestamp;
-
         totalWaves += 1;
         console.log("%s has waved w/ message %s", msg.sender, _message);
 
