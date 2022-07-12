@@ -31,6 +31,10 @@ const main = async () => {
         hre.ethers.utils.formatEther(contractBalance)
     );
 
+    const [_, randomPerson] = await hre.ethers.getSigners();
+    waveTxn = await waveContract.connect(randomPerson).wave("Another message");
+    await waveTxn.wait();
+
     let allWaves = await waveContract.getAllWaves();
     console.log(allWaves);
 };
